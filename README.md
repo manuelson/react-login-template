@@ -19,6 +19,8 @@ The project is structured as follows:
 		- useUser.tsx: Hook for manage User
 	- `context`
 		- AuthContext.tsx: This module provides the authentication context for the application.
+	- `compiler`
+		- types.tsx: This TypeScript file defines all interfaces
 	- App.tsx: This is the main component of the application.
 
 ## Authentication
