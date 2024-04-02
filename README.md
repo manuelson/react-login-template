@@ -6,18 +6,20 @@ This document describes a login template in React that connects to a custom API 
 
 The project is structured as follows:
 
-- src/
-	- components/
+- `src/`
+	- `components/`
 		- Loader.tsx: This component handles loaders
 		- LogoutButton.tsx: This component handles the logout functionality
 		- Router.tsx: This component handles routers
-	- hooks/
+	- `layout/`
+		- Index.tsx: Contains the layout structure.
+	- `hooks/`
 		- useAuth.tsx: Hook for authenticate or logout the user
 		- useLocalStorage.tsx: Hook for manage localStorage
 		- useUser.tsx: Hook for manage User
-	- contexts/
-		- AuthContext.js: This module provides the authentication context for the application.
-	- App.js: This is the main component of the application.
+	- `context`
+		- AuthContext.tsx: This module provides the authentication context for the application.
+	- App.tsx: This is the main component of the application.
 
 ## Authentication
 
