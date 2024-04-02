@@ -7,7 +7,7 @@ const NavBar = () => {
 	return (
 	<Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">React Login Template</Navbar.Brand>
+        <Link className="navbar-brand" to={'/'}>React Login Template</Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
