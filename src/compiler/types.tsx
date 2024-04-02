@@ -6,8 +6,8 @@ export interface User {
 }
 
 export interface LoginRequest {
-	email: string;
-	password: string;
+	email: string | null;
+	password: string | null;
 }
 
 export interface Response {

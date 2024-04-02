@@ -5,9 +5,9 @@ import LogoutButton from 'src/components/LogoutButton';
 const LoginPage = () => {
 
   /* useState hooks */
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
+  const [email, setEmail] = useState<string | null>('');
+  const [password, setPassword] = useState<string | null>('');
+  const [error, setError] = useState<string | null>(null);
   /* end useState hooks */
 
   const { login, user } = useAuth();
