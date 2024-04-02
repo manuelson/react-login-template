@@ -1,30 +1,41 @@
-# React + TypeScript + Vite
+# React Login Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This document describes a login template in React that connects to a custom API to authenticate users.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project is structured as follows:
 
-## Expanding the ESLint configuration
+- src/
+	- components/
+		- LoginForm.js: This component handles the login form.
+		- LogoutButton.js: This component handles the logout functionality.
+	- api/
+		- auth.js: This module connects to the custom API to handle authentication requests.
+	- contexts/
+		- AuthContext.js: This module provides the authentication context for the application.
+	- App.js: This is the main component of the application.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Authentication
 
-- Configure the top-level `parserOptions` property like this:
+Authentication is handled through AuthContext.js and auth.js. AuthContext.js provides a context that contains the user state and functions to log in and log out. auth.js connects to the custom API to authenticate the user.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Login
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Login is handled through the LoginForm.js component. When the user submits the login form, LoginForm.js calls the login function provided by AuthContext.js.
+
+## Logout
+
+Logout is handled through the LogoutButton.js component. When the user clicks the logout button, LogoutButton.js calls the logout function provided by AuthContext.js.
+
+## Connecting to the Custom API
+
+The connection to the custom API is handled through auth.js. auth.js uses fetch to send authentication requests to the API and returns the API's responses.
+
+## Usage
+
+To use this template, simply clone the repository, install the dependencies with npm install or yarn install, and then start the application with npm start or yarn start. Be sure to configure the URL of your custom API in auth.js.
+
+## Conclusion
+
+This template provides a solid base for creating a React application with authentication. With a bit of customization, you can adapt it to your own needs and connect it to your own API.
