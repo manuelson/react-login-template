@@ -31,23 +31,23 @@ To use this template, simply clone the repository, install the dependencies with
 
 We welcome contributions to this project! Here are the steps to get started:
 
-1. Fork the Repository: Click the 'Fork' button at the top right of this page and clone your forked repository to your local machine.
+1. **Fork the Repository**: Click the 'Fork' button at the top right of this page and clone your forked repository to your local machine.
 
-2. Create a Branch: Create a new branch on your local repository. The branch name should be descriptive of the changes you'll be making.
+2. **Create a Branch**: Create a new branch on your local repository. The branch name should be descriptive of the changes you'll be making.
 
 <code>git checkout -b your-branch-name</code>
 
-3. Make Your Changes: Make the changes you want to contribute. These could be adding new features, fixing bugs, or improving documentation.
+3. **Make Your Changes**: Make the changes you want to contribute. These could be adding new features, fixing bugs, or improving documentation.
 
-4. Commit Your Changes: Commit your changes with a descriptive commit message.
+4. **Commit Your Changes**: Commit your changes with a descriptive commit message.
 
 <code>git commit -m "Your descriptive commit message"</code>
 
-5. Push to Your Fork: Push your changes to your forked repository.
+5. **Push to Your Fork**: Push your changes to your forked repository.
 
 <code>git push origin your-branch-name</code>
 
-6. Create a Pull Request: Go to your forked repository on GitHub and click the 'New pull request' button. Fill out the form and then submit the pull request.
+6. **Create a Pull Request**: Go to your forked repository on GitHub and click the 'New pull request' button. Fill out the form and then submit the pull request.
 
 Before submitting your pull request, please make sure your changes do not break the project. You can do this by running the project and checking if everything works as expected.
 
