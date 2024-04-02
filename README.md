@@ -8,10 +8,13 @@ The project is structured as follows:
 
 - src/
 	- components/
-		- LoginForm.js: This component handles the login form.
-		- LogoutButton.js: This component handles the logout functionality.
-	- api/
-		- auth.js: This module connects to the custom API to handle authentication requests.
+		- Loader.tsx: This component handles loaders
+		- LogoutButton.tsx: This component handles the logout functionality
+		- Router.tsx: This component handles routers
+	- hooks/
+		- useAuth.tsx: Hook for authenticate or logout the user
+		- useLocalStorage.tsx: Hook for manage localStorage
+		- useUser.tsx: Hook for manage User
 	- contexts/
 		- AuthContext.js: This module provides the authentication context for the application.
 	- App.js: This is the main component of the application.
