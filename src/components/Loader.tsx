@@ -1,6 +1,6 @@
 
 const Loader = () => {
-  return <div>JAAJAJ lOader</div>;
+  return <div>Loading...</div>;
 };
 
 export default Loader;
