@@ -23,26 +23,32 @@ The project is structured as follows:
 		- types.tsx: This TypeScript file defines all interfaces
 	- App.tsx: This is the main component of the application.
 
-## Authentication
-
-Authentication is handled through AuthContext.js and auth.js. AuthContext.js provides a context that contains the user state and functions to log in and log out. auth.js connects to the custom API to authenticate the user.
-
-## Login
-
-Login is handled through the LoginForm.js component. When the user submits the login form, LoginForm.js calls the login function provided by AuthContext.js.
-
-## Logout
-
-Logout is handled through the LogoutButton.js component. When the user clicks the logout button, LogoutButton.js calls the logout function provided by AuthContext.js.
-
-## Connecting to the Custom API
-
-The connection to the custom API is handled through auth.js. auth.js uses fetch to send authentication requests to the API and returns the API's responses.
-
 ## Usage
 
-To use this template, simply clone the repository, install the dependencies with npm install or yarn install, and then start the application with npm start or yarn start. Be sure to configure the URL of your custom API in auth.js.
+To use this template, simply clone the repository, install the dependencies with `npm install` or `yarn install`, and then start the application with `npm start` or `yarn start`. Be sure to configure the URL of your custom API in `.env` file.
 
-## Conclusion
+## Contributing
 
-This template provides a solid base for creating a React application with authentication. With a bit of customization, you can adapt it to your own needs and connect it to your own API.
+We welcome contributions to this project! Here are the steps to get started:
+
+1. Fork the Repository: Click the 'Fork' button at the top right of this page and clone your forked repository to your local machine.
+
+2. Create a Branch: Create a new branch on your local repository. The branch name should be descriptive of the changes you'll be making.
+
+<code>git checkout -b your-branch-name</code>
+
+3. Make Your Changes: Make the changes you want to contribute. These could be adding new features, fixing bugs, or improving documentation.
+
+4. Commit Your Changes: Commit your changes with a descriptive commit message.
+
+<code>git commit -m "Your descriptive commit message"</code>
+
+5. Push to Your Fork: Push your changes to your forked repository.
+
+<code>git push origin your-branch-name</code>
+
+6. Create a Pull Request: Go to your forked repository on GitHub and click the 'New pull request' button. Fill out the form and then submit the pull request.
+
+Before submitting your pull request, please make sure your changes do not break the project. You can do this by running the project and checking if everything works as expected.
+
+Thank you for your contribution!
