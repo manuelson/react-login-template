@@ -6,9 +6,7 @@ export function Layout() {
 
   return (
     <>
-        <header>
-            <NavBar />
-        </header>
+        <NavBar />
         <main className="mt-5 container">
             <Outlet />
         </main>

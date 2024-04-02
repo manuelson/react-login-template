@@ -9,7 +9,6 @@ const HomePage = () => {
   return (
     <>
       <h1>Hello {user?.firstname}</h1>
-      <LogoutButton />
     </>
   );
 };

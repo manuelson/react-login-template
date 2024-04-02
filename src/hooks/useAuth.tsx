@@ -22,7 +22,7 @@ export const useAuth = () => {
       password: user.password
     })
     .then(response => {
-        addUser(response.data);
+        addUser(response.data.data);
     })
     .catch(error => {
       // Handle the error response
