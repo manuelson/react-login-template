@@ -7,10 +7,10 @@ const HomePage = () => {
 
 
   return (
-    <div>
+    <>
       <h1>Hello {user?.firstname}</h1>
       <LogoutButton />
-    </div>
+    </>
   );
 };
 
