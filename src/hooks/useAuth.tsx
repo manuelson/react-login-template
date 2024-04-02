@@ -15,7 +15,7 @@ export const useAuth = () => {
     }
   }, [])
 
-  const login = async (user: LoginRequest) : Promise<any> => {
+  const login = async (user: LoginRequest, setError: any) : Promise<any> => {
 
     await axios.post<Response, any>(`${import.meta.env.VITE_BACKEND_ENDPOINT}/auth/login`, {
       email: user.email,
@@ -25,12 +25,10 @@ export const useAuth = () => {
         addUser(response.data);
     })
     .catch(error => {
-      if (error.response.status !== 500) {
-        alert(error.response.data.message)
-      }
       // Handle the error response
-      console.error(error);
-    });
+      console.error(error)
+      setError(error.response.data.message)
+    })
   }
 
   const logout = () : void => {
