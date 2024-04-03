@@ -30,7 +30,6 @@ const LoginPage = () => {
     if (user) {
       navigate("/");
     }
-    console.log(user)
   }, [user])
 
   return (
