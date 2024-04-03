@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { ReactNode, createContext } from "react";
 import { User } from "src/compiler/types";
 import { useState } from "react";
 import { useLocalStorage } from "src/hooks/useLocalStorage";
@@ -13,7 +13,7 @@ export const AuthContext = createContext<AuthContext>({
   setUser: () => {},
 });
 
-const Provider = ({children} : any) => {
+const Provider = ({children}: any) => {
   const { getItem } = useLocalStorage();
   const [user, setUser] = useState<User | null>(() => {
     const storedUser = getItem("user");

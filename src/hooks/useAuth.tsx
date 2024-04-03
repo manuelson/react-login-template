@@ -3,10 +3,12 @@ import { useUser } from "src/hooks/useUser"
 import { useLocalStorage } from "src/hooks/useLocalStorage"
 import axios from 'axios'
 import { Response, LoginRequest } from "src/compiler/types"
+import { transformers } from "src/helper/transformers"
 
 export const useAuth = () => {
   const { user, addUser, removeUser, setUser } = useUser()
   const { getItem } = useLocalStorage()
+  const { transformUserResponse } = transformers()
 
   useEffect(() => {
     const storedUser = getItem("user")
@@ -15,14 +17,13 @@ export const useAuth = () => {
     }
   }, [])
 
-  const login = async (user: LoginRequest, setError: any) : Promise<any> => {
-
-    await axios.post<Response, any>(`${import.meta.env.VITE_BACKEND_ENDPOINT}/auth/login`, {
+  const login = async (user: LoginRequest, setError: Function) : Promise<void> => {
+    await axios.post<Response>(`${import.meta.env.VITE_BACKEND_ENDPOINT}/auth/login`, {
       email: user.email,
       password: user.password
     })
     .then(response => {
-        addUser(response.data.data);
+        addUser(transformUserResponse(response.data))
     })
     .catch(error => {
       // Handle the error response
