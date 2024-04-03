@@ -27,11 +27,11 @@ The project is structured as follows:
 
 To use this template, simply clone the repository, install the dependencies with `npm install` or `yarn install`, and then start the application with `npm start` or `yarn start`. Be sure to configure the URL of your custom API in `.env` file.
 
-## Versions
+## Versions
 
-React 18.2
-Vite 5.2
-Vite react swc 3.5
+- React 18.2
+- Vite 5.2
+- Vite react swc 3.5
 
 ## Contributing
 
