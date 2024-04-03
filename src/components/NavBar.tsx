@@ -57,9 +57,6 @@ const NavBar = () => {
               <Link className="nav-link" to={"/login"}>
                 Login
               </Link>
-              <p className="nav-link">
-                <strong>or</strong>
-              </p>
               <Link className="nav-link" to={"/register"}>
                 Register
               </Link>
