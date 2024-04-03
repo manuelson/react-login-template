@@ -1,25 +1,28 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
-import { useAuth } from 'src/hooks/useAuth';
-import Dropdown from 'react-bootstrap/Dropdown';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
+import { useAuth } from "src/hooks/useAuth";
+import Dropdown from "react-bootstrap/Dropdown";
 
 const NavBar = () => {
-
   const { user, logout } = useAuth();
 
-	return (
-	<Navbar expand="lg" className="bg-body-tertiary">
+  return (
+    <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Link className="navbar-brand" to={'/'}>
+        <Link className="navbar-brand" to={"/"}>
           <i className="fa fa-cube"></i>React<b>Login</b>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link className="nav-link" to={'/'}>Home</Link>
-            <Link className="nav-link" to={'/login'}>Login</Link>
+            <Link className="nav-link" to={"/"}>
+              Home
+            </Link>
+            <Link className="nav-link" to={"/login"}>
+              Login
+            </Link>
           </Nav>
           {user && (
             <Nav className="navbar-nav ml-auto">
@@ -34,12 +37,21 @@ const NavBar = () => {
 
               <Dropdown>
                 <Dropdown.Toggle variant="" id="dropdown-basic">
-                <img src="vite.svg" className="avatar me-2" style={{'width': '20px'}} alt="Avatar" />
+                  <img
+                    src="vite.svg"
+                    className="avatar me-2"
+                    style={{ width: "20px" }}
+                    alt="Avatar"
+                  />
                   {user?.firstname}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                  <Link className="dropdown-item" to={'/account'}>My account</Link>
-                  <a role="button" className="dropdown-item" onClick={logout}>Disconnect</a>
+                  <Link className="dropdown-item" to={"/account"}>
+                    My account
+                  </Link>
+                  <a role="button" className="dropdown-item" onClick={logout}>
+                    Disconnect
+                  </a>
                 </Dropdown.Menu>
               </Dropdown>
             </Nav>
@@ -47,8 +59,7 @@ const NavBar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-	)
-}
-
+  );
+};
 
 export default NavBar;
