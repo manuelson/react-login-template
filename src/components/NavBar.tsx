@@ -39,7 +39,7 @@ const NavBar = () => {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Link className="dropdown-item" to={'/account'}>My account</Link>
-                  <Link className="dropdown-item" onClick={logout}>Disconnect</Link>
+                  <a role="button" className="dropdown-item" onClick={logout}>Disconnect</a>
                 </Dropdown.Menu>
               </Dropdown>
             </Nav>
