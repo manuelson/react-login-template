@@ -20,11 +20,8 @@ const NavBar = () => {
             <Link className="nav-link" to={"/"}>
               Home
             </Link>
-            <Link className="nav-link" to={"/login"}>
-              Login
-            </Link>
           </Nav>
-          {user && (
+          {user ? (
             <Nav className="navbar-nav ml-auto">
               <a href="#" className="nav-item nav-link notifications">
                 <i className="fa fa-bell-o"></i>
@@ -54,6 +51,18 @@ const NavBar = () => {
                   </a>
                 </Dropdown.Menu>
               </Dropdown>
+            </Nav>
+          ): (
+            <Nav className="navbar-nav ml-auto">
+              <Link className="nav-link" to={"/login"}>
+                Login
+              </Link>
+              <p className="nav-link">
+                <strong>or</strong>
+              </p>
+              <Link className="nav-link" to={"/register"}>
+                Register
+              </Link>
             </Nav>
           )}
         </Navbar.Collapse>

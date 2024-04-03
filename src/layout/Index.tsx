@@ -8,7 +8,7 @@ export function Layout() {
   return (
     <>
         <NavBar />
-        <Container className="mt-5">
+        <Container className="mt-3">
             <Outlet />
         </Container>
         <Footer />
