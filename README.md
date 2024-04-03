@@ -13,6 +13,8 @@ The project is structured as follows:
 		- Router.tsx: This component handles routers
 	- `layout/`
 		- Index.tsx: Contains the layout structure.
+	- `helpers/`
+		- transformers.tsx: Transform data from axios.
 	- `hooks/`
 		- useAuth.tsx: Hook for authenticate or logout the user
 		- useLocalStorage.tsx: Hook for manage localStorage
