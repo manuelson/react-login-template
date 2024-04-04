@@ -9,7 +9,6 @@ The project is structured as follows:
 - `src/`
 	- `components/`
 		- Loader.tsx: This component handles loaders
-		- LogoutButton.tsx: This component handles the logout functionality
 		- Router.tsx: This component handles routers
 	- `layout/`
 		- Index.tsx: Contains the layout structure.
