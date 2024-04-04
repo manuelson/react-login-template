@@ -4,7 +4,7 @@ This document describes a login template in React that connects to a custom API 
 
 ## Demo
 
-http://react.manugonzalez.com/
+https://react.manugonzalez.com/
 
 ## Project Structure
 
