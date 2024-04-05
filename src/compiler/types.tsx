@@ -2,7 +2,8 @@ export interface User {
 	firstname: string;
 	lastname: string;
 	email: string;
-	token: string;
+	token?: string;
+	password?: string;
 }
 
 export interface LoginRequest {
