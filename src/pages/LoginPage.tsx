@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from 'src/hooks/useAuth';
 import Loader from 'src/components/Loader';
-import { Button, Form } from 'react-bootstrap';
+import { Alert, Button, Form } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
@@ -37,7 +37,7 @@ const LoginPage = () => {
       <section className="mb-4">
         <h1>Login</h1>
       </section>
-      {error && <div>{error}</div>}
+      {error && <Alert variant={"danger"}>{error}</Alert>}
       <Form.Group className="mb-3" controlId="">
         <Form.Label>Email address</Form.Label>
         <Form.Control onChange={(e) => setEmail(e.target.value)} type="email" placeholder="name@example.com" />
