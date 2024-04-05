@@ -28,7 +28,7 @@ export const useAuth = () => {
     .catch(error => {
       // Handle the error response
       console.error(error)
-      if (!error.response) {
+      if (!error.response && !error.response.data.message) {
         setError(error.message)
         return
       }

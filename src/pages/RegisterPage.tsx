@@ -33,7 +33,7 @@ const RegisterPage = () => {
       setSuccessMessage('User registered successfully')
     } catch (error : AxiosError | any) {
       console.error(error)
-      if (error.response) {
+      if (error.response && error.response.data.message) {
         setError(error.response.data.message)
       } else {
         setError(error.message)
