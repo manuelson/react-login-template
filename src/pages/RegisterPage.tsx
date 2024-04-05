@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useAuth } from 'src/hooks/useAuth';
 import Loader from 'src/components/Loader';
 import { Alert, Button, Form } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import { User } from 'src/compiler/types';
 import { AxiosError } from 'axios';
+import { useRegister } from 'src/hooks/useRegister';
 
 const RegisterPage = () => {
 
@@ -20,11 +20,11 @@ const RegisterPage = () => {
   })
   /* end useState hooks */
 
-  const { register, setUserToLogin } = useAuth()
+  const { register, setUserToLogin } = useRegister()
   const navigate = useNavigate()
 
   const handleSubmit = async (event:  any) => {
-    event.preventDefault(); // Prevents default form submission behavior
+    event.preventDefault()
     setLoading(true)
     setError(null)
     try {
@@ -39,9 +39,8 @@ const RegisterPage = () => {
         setError(error.message)
       }
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-    setLoading(false)
   }
 
   const handleInputChange = (event:  React.ChangeEvent<HTMLInputElement>) => {
