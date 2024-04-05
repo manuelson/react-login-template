@@ -32,25 +32,25 @@ export const useAuth = () => {
     })
   }
 
-  const register = async (user: User | null, setError: Function) : Promise<void> => {
+  const setUserToLogin = (user: User) => {
+    addUser(transformUserResponse(user))
+  }
+
+  const register = async (user: User | null) : Promise<User> => {
     if (!user) {
-      setError('User is required')
-      return
+      return Promise.reject('no user provided');
     }
 
-    await axios.post<Response>(`${import.meta.env.VITE_BACKEND_ENDPOINT}/auth/register`, {
+    return await axios.post(`${import.meta.env.VITE_BACKEND_ENDPOINT}/auth/register`, {
       firstname: user.firstname,
       lastname: user.lastname,
       email: user.email,
       password: user.password
-    })
-    .then(response => {
-        addUser(transformUserResponse(response.data))
+    }).then(response => {
+      return Promise.resolve(response.data);
     })
     .catch(error => {
-      // Handle the error response
-      console.error(error)
-      setError(error.response.data.message)
+      return Promise.reject(error);
     })
   }
 
@@ -58,5 +58,5 @@ export const useAuth = () => {
     removeUser();
   }
 
-  return { user, login, logout, register, setUser }
+  return { user, login, logout, register, setUser, setUserToLogin }
 };

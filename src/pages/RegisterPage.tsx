@@ -1,9 +1,10 @@
-import { FormEventHandler, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAuth } from 'src/hooks/useAuth';
 import Loader from 'src/components/Loader';
-import { Button, Form } from 'react-bootstrap';
+import { Alert, Button, Form } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import { User } from 'src/compiler/types';
+import { AxiosError } from 'axios';
 
 const RegisterPage = () => {
 
@@ -19,15 +20,28 @@ const RegisterPage = () => {
   })
   /* end useState hooks */
 
-  const { register } = useAuth()
+  const { register, setUserToLogin } = useAuth()
   const navigate = useNavigate()
 
-  const handleSubmit = (event:  any) => {
+  const handleSubmit = async (event:  any) => {
     event.preventDefault(); // Prevents default form submission behavior
     setLoading(true)
-    register(formData, setError);
+    setError(null)
+    try {
+      let user: User = await register(formData)
+      setUserToLogin(user)
+      setSuccessMessage('User registered successfully')
+    } catch (error : AxiosError | any) {
+      console.error(error)
+      if (error.response) {
+        setError(error.response.data.message)
+      } else {
+        setError(error.message)
+      }
+    } finally {
+      setLoading(false);
+    }
     setLoading(false)
-    if (!error) setSuccessMessage('User registered successfully')
   }
 
   const handleInputChange = (event:  React.ChangeEvent<HTMLInputElement>) => {
@@ -50,7 +64,7 @@ const RegisterPage = () => {
       <section className="mb-4">
         <h1>Login</h1>
       </section>
-      {error && <div>{error}</div>}
+      {error && <Alert variant={"danger"}>{error}</Alert>}
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>First name</Form.Label>
