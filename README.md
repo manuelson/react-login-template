@@ -22,6 +22,7 @@ The project is structured as follows:
 		- useAuth.tsx: Hook for authenticate or logout the user
 		- useLocalStorage.tsx: Hook for manage localStorage
 		- useUser.tsx: Hook for manage User
+		- useRegister.tsx: Hook create users
 	- `context/`
 		- AuthContext.tsx: This module provides the authentication context for the application.
 	- `compiler/`
