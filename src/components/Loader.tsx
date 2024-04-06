@@ -1,8 +1,8 @@
-import { Spinner } from "react-bootstrap";
+import { Spinner } from "flowbite-react";
 
 const Loader = () => {
   return (
-    <Spinner animation="border" role="status">
+    <Spinner size="sm">
       <span className="visually-hidden">Loading...</span>
     </Spinner>
   )

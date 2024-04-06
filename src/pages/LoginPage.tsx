@@ -1,8 +1,14 @@
-import { useEffect, useState } from 'react';
-import { useAuth } from 'src/hooks/useAuth';
-import Loader from 'src/components/Loader';
-import { Alert, Button, Form } from 'react-bootstrap';
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react'
+import { useAuth } from 'src/hooks/useAuth'
+import Loader from 'src/components/Loader'
+import {
+  Button,
+  Checkbox,
+  Label,
+  TextInput,
+  Alert
+} from "flowbite-react"
+import { useNavigate } from "react-router-dom"
 
 const LoginPage = () => {
 
@@ -34,21 +40,27 @@ const LoginPage = () => {
 
   return (
     <>
-      <section className="mb-4">
-        <h1>Login</h1>
-      </section>
-      {error && <Alert variant={"danger"}>{error}</Alert>}
-      <Form.Group className="mb-3" controlId="">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control onChange={(e) => setEmail(e.target.value)} type="email" placeholder="name@example.com" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="">
-        <Form.Label>Password</Form.Label>
-        <Form.Control onChange={(e) => setPassword(e.target.value)} type="password" />
-      </Form.Group>
-      <Button variant="primary" type="submit" onClick={handleLogin}>
-        {loading && <Loader />}Submit
-      </Button>
+      {error && (
+        <Alert color={"failure"}>{error}</Alert>
+      )}
+      <div className="flex max-w-md flex-col gap-4">
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="email1" value="Your email" />
+          </div>
+          <TextInput id="email1" type="email" onChange={(e) => setEmail(e.target.value)} required />
+        </div>
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="password1" value="Your password" />
+          </div>
+          <TextInput id="password1" type="password" onChange={(e) => setPassword(e.target.value)}  required />
+        </div>
+
+        <Button type="submit" onClick={handleLogin}>
+        {loading && <Loader />}Login
+        </Button>
+      </div>
     </>
   )
 }

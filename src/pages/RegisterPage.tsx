@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import Loader from 'src/components/Loader';
-import { Alert, Button, Form } from 'react-bootstrap';
-import { useNavigate } from "react-router-dom";
-import { User } from 'src/compiler/types';
-import { AxiosError } from 'axios';
-import { useRegister } from 'src/hooks/useRegister';
+import { useEffect, useState } from 'react'
+import Loader from 'src/components/Loader'
+import { useNavigate } from "react-router-dom"
+import { User } from 'src/compiler/types'
+import { AxiosError } from 'axios'
+import { useRegister } from 'src/hooks/useRegister'
+import { Alert, Button, Label, TextInput } from 'flowbite-react'
 
 const RegisterPage = () => {
 
@@ -60,31 +60,34 @@ const RegisterPage = () => {
 
   return (
     <>
-      <section className="mb-4">
-        <h1>Login</h1>
-      </section>
-      {error && <Alert variant={"danger"}>{error}</Alert>}
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>First name</Form.Label>
-          <Form.Control name={"firstname"} id={"firstname"} onChange={handleInputChange} type="text"/>
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Last name</Form.Label>
-          <Form.Control name={"lastname"} id={"lastname"} onChange={handleInputChange} type="text" />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control name={"email"} id={"email"} onChange={handleInputChange} type="email" placeholder="name@example.com" />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Password</Form.Label>
-          <Form.Control name={"password"} id={"password"} onChange={handleInputChange} type="password" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          {loading && <Loader />}Register
-        </Button>
-      </Form>
+      {error && <Alert color={"failure"}>{error}</Alert>}
+      <form className="flex max-w-md flex-col gap-4" onSubmit={handleSubmit}>
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="firstname" value="Your firstname" />
+          </div>
+          <TextInput id="firstname" name="firstname" type="text" onChange={handleInputChange} required />
+        </div>
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="lastname" value="Your lastname" />
+          </div>
+          <TextInput id="lastname" name="lastname" type="text" onChange={handleInputChange} required />
+        </div>
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="email1" value="Your email" />
+          </div>
+          <TextInput id="email1" name={"email"} type="email" onChange={handleInputChange} required />
+        </div>
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="password1" value="Your password" />
+          </div>
+          <TextInput id="password1" name={"password"} type="password" onChange={handleInputChange} required />
+        </div>
+        <Button type="submit">{loading && <Loader />}Register</Button>
+      </form>
     </>
   )
 }
