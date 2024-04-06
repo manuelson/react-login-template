@@ -3,7 +3,6 @@ import { useAuth } from 'src/hooks/useAuth'
 import Loader from 'src/components/Loader'
 import {
   Button,
-  Checkbox,
   Label,
   TextInput,
   Alert
