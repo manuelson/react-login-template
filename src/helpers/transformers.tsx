@@ -2,7 +2,6 @@ import { User } from "src/compiler/types";
 
 export const transformers = () => {
 
-
   const transformUserResponse = (user: any) : User => {
     return {
       email: user.data.email,
