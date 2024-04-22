@@ -6,5 +6,4 @@ const App = () => {
     <RouterProvider router={Router} />
   );
 };
-
 export default App;
